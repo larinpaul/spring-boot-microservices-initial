@@ -36,7 +36,7 @@ public class OrderService {
 
         // Call Inventory Service, and place order if product is in
         // stock
-        webClient.get()
+        Boolean result = webClient.get()
                 .uri("http://localhost:8082/api/inventory")
                 .retrieve()
                 .bodyToMono(Boolean.class)
