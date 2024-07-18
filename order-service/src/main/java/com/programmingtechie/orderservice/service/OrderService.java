@@ -36,6 +36,11 @@ public class OrderService {
 
         // Call Inventory Service, and place order if product is in
         // stock
+        webClient.get()
+                .uri("http://localhost:8082/api/inventory")
+                .retrieve()
+                .bodyToMono(Boolean.class)
+                .block();
         orderRepository.save(order);
     }
 
