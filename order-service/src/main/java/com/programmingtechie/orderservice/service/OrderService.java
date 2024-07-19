@@ -41,7 +41,11 @@ public class OrderService {
                 .retrieve()
                 .bodyToMono(Boolean.class)
                 .block();
-        orderRepository.save(order);
+        if (result) {
+            orderRepository.save(order);
+        } else {
+            throw new IllegalArgumentException("Product is not in stock, please try again later");
+        }
     }
 
 
