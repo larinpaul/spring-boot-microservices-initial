@@ -34,6 +34,10 @@ public class OrderService {
 
         order.setOrderLineItemsList(orderLineItems);
 
+        List<String> skuCodes = order.getOrderLineItemsList().stream()
+                .map(OrderLineItems::getSkuCode)
+                .toList();
+
         // Call Inventory Service, and place order if product is in
         // stock
         Boolean result = webClient.get()
