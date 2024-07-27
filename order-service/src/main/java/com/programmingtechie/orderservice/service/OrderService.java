@@ -43,7 +43,7 @@ public class OrderService {
         Boolean result = webClient.get()
                 .uri("http://localhost:8082/api/inventory")
                 .retrieve()
-                .bodyToMono(Boolean.class)
+                .bodyToMono(InventoryResponse[].class)
                 .block();
         if (result) {
             orderRepository.save(order);
