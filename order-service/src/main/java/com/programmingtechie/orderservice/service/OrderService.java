@@ -23,7 +23,7 @@ import java.util.UUID;
 public class OrderService {
 
     private final OrderRepository orderRepository;
-    private final WebClient webClient;
+    private final WebClient webClient; // maybe WebClient.Builder?
 
     public void placeOrder(OrderRequest orderRequest) {
         Order order = new Order();
