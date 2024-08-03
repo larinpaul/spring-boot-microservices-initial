@@ -4,7 +4,9 @@ import org.springframework.boot.autoconfigue.SpringBootApplication;
 
 @SpringBootApplication
 public class DiscoveeryServerApplication {
-
+    public static void main(String[] args) {
+        SpringApplication.run(DiscoveryServerApplication.class, args);
+    }
 }
 
 
