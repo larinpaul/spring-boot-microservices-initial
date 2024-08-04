@@ -9,7 +9,6 @@ public class DiscoveeryServerApplication {
     }
 }
 
-
 //package com.programming.techie.discoveryserver;
 //
 //import org.springframework.boot.SpringApplication;
